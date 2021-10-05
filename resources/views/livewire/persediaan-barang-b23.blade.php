@@ -62,19 +62,36 @@
                         <tbody>
                             @foreach ($reports as $item)
                                 <tr>
+
+                                    @php
+                                        if ($barang_id == $item->barang_id) {
+                                            if ($item->status == 1) {
+                                                $sisa += $item->qty;
+                                            } else {
+                                                $sisa -= $item->qty;
+                                            }
+                                        } else {
+                                            $sisa = $item->qty;
+                                        }
+                                        
+                                    @endphp
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->penerimaan->barang->name }}</td>
                                     <td>{{ $item->status == 1 ? $item->qty : '0' }}</td>
                                     <td>{{ $item->status == 1 ? '0' : $item->qty }}</td>
-                                    <td>{{ $item->sisa }}</td>
+                                    <td>{{ $sisa }}</td>
                                     <td>Rp. {{ number_format($item->penerimaan->barang_price) }}</td>
                                     <td>{{ $item->status == 1 ? 'Rp. ' . number_format($item->qty * $item->penerimaan->barang_price) : '0' }}
                                     </td>
                                     <td>{{ $item->status == 1 ? '0' : 'Rp. ' . number_format($item->qty * $item->penerimaan->barang_price) }}
                                     </td>
+                                    <td>{{ 'Rp. ' . number_format($sisa * $item->penerimaan->barang_price) }}</td>
                                     <td></td>
-                                    <td></td>
+
+                                    @php
+                                        $barang_id = $item->barang_id;
+                                    @endphp
                                 </tr>
                             @endforeach
                         </tbody>

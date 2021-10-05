@@ -5,15 +5,15 @@
                 <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
             </div>
             <div class="top-menu d-flex align-items-center">
-                <div class="dropdown">
-
-                </div>
 
 
                 <div class="dropdown">
+
+
                     <a class="dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img class="avatar" src="{{ url('storage/photos_thumb', auth()->user()->photo) }}" alt=""></a>
+                        <img class="avatar" src="{{ url('storage/photos_thumb', auth()->user()->photo) }}"
+                            alt="halo halo"></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="{{ url('user/profile') }}"><i
                                 class="ik ik-user dropdown-icon"></i>

@@ -1,6 +1,6 @@
 <div class="app-sidebar colored">
     <div class="sidebar-header">
-        <a class="header-brand" href="">
+        <a class="header-brand" href="{{ url('/') }}">
             <div class="logo-img">
                 <img height="30" src="{{ asset('images/logo.png') }}" class="header-brand-img" title="RADMIN">
                 SISeRang

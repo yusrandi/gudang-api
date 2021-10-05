@@ -60,12 +60,28 @@
 
                             @foreach ($reports as $item)
                                 <tr>
+                                    @php
+                                        if ($barang_id == $item->barang_id) {
+                                            if ($item->status == 1) {
+                                                $sisa += $item->qty;
+                                            } else {
+                                                $sisa -= $item->qty;
+                                            }
+                                        } else {
+                                            $sisa = $item->qty;
+                                        }
+                                        
+                                    @endphp
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->penerimaan->barang->name }}</td>
                                     <td>{{ $item->status == 1 ? $item->qty : '0' }}</td>
                                     <td>{{ $item->status == 1 ? '0' : $item->qty }}</td>
-                                    <td>{{ $item->sisa }}</td>
+                                    <td>{{ $sisa }}</td>
+
+                                    @php
+                                        $barang_id = $item->barang_id;
+                                    @endphp
                                 </tr>
                             @endforeach
                         </tbody>

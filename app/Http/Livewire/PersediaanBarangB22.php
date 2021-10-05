@@ -65,7 +65,9 @@ class PersediaanBarangB22 extends Component
         // dd($this->resultData());
         return view('livewire.persediaan-barang-b22',[
             'klasifikasis' => Klasifikasi::orderBy('name')->get(),
-            'reports' => $this->resultData()
+            'reports' => $this->resultData(),
+            'sisa' => 0,
+            'barang_id' => 0,
         ]);
     }
 }
