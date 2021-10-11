@@ -7,6 +7,7 @@ use App\Models\Klasifikasi;
 use App\Models\Penerimaan;
 use App\Models\Pengeluaran;
 use App\Models\Report;
+use App\Models\YearSelect;
 use Carbon\Carbon;
 use Livewire\Component;
 use Maatwebsite\Excel\Facades\Excel;
@@ -15,7 +16,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 class Wirepenerimaan extends Component
 {
     public $filterKatid, $filterSemester, $monthStart, $monthEnd, $startDate, $endDate, $filterTahun, $selectedItemId;
-
+    public $yearPriode;
     protected $listeners = [
         'confirmed',
         'cancelled',
@@ -40,6 +41,7 @@ class Wirepenerimaan extends Component
         // dd($this->startDate);
 
         $this->filterKatid = Klasifikasi::orderby('name', 'ASC')->first()->id;
+        $this->yearPriode = YearSelect::latest()->first()->year;
         
     }
     private function resultData(){

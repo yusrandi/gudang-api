@@ -56,7 +56,7 @@ class Create extends Component
     public function save()
     {
         $data  =  $this->validate();
-        dd($data);
+        // dd($data);
         $data['user_id'] = Auth::user()->id;
         $save = $this->selectedItemId ? Order::find($this->selectedItemId)->update($data) : Order::create($data); 
         

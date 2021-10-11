@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReportsTable extends Migration
+class CreateYearSelectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class CreateReportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
+        Schema::create('year_selects', function (Blueprint $table) {
             $table->id();
-            
-            $table->unsignedBigInteger('penerimaan_id')->nullable();
-            $table->foreign('penerimaan_id')->references('id')->on('penerimaans');
-
-            $table->string('qty');
-            $table->string('sisa');
-            
+            $table->string('year')->default('2021');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ class CreateReportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('year_selects');
     }
 }

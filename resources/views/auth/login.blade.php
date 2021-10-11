@@ -44,8 +44,8 @@
                             <a href=""><img src="{{ asset('images/logo.png') }}" alt="" width="100px"></a>
                         </div>
 
-                        <h3 class="text-center">{{ __('SISeRang') }}</h3>
-                        <p class="text-center">{{ __('(Sistem Informasi Ketersediaan Barang)') }}</p>
+                        <h3 class="text-center">{{ __('SiPeBa') }}</h3>
+                        <p class="text-center">{{ __('(Sistem Informasi Pelaporan Barang Milik Daerah)') }}</p>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group">

@@ -3,7 +3,7 @@
         <a class="header-brand" href="{{ url('/') }}">
             <div class="logo-img">
                 <img height="30" src="{{ asset('images/logo.png') }}" class="header-brand-img" title="RADMIN">
-                SISeRang
+                SIPeba
             </div>
         </a>
         <div class="sidebar-action"><i class="ik ik-arrow-left-circle"></i></div>
@@ -71,6 +71,10 @@
                     <div class="nav-item {{ request()->is('user') ? 'active' : '' }}">
                         <a href="{{ url('user') }}"><i
                                 class="ik ik-user"></i><span>{{ __('User / Pengguna') }}</span></a>
+                    </div>
+                    <div class="nav-item {{ request()->is('tahun') ? 'active' : '' }}">
+                        <a href="{{ url('tahun') }}"><i
+                                class="ik ik-layout"></i><span>{{ __('Pergantian Tahun') }}</span></a>
                     </div>
                 @endif
 

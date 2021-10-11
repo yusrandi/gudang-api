@@ -40,7 +40,6 @@ class Penerimaan extends Model
             }
             
         })
-        
         ->get();
     }
 

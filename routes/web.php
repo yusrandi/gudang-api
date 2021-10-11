@@ -21,6 +21,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+    Route::get('/tahun', [App\Http\Controllers\HomeController::class, 'tahun']);
     Route::get('master/klasifikasi', [App\Http\Controllers\KlasifikasiController::class, 'index']);
     Route::get('master/satuan', [App\Http\Controllers\SatuanController::class, 'index']);
     Route::get('master/rekanan', [App\Http\Controllers\RekananController::class, 'index']);

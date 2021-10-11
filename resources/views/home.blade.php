@@ -4,7 +4,8 @@
 
 
     <div class="container-fluid">
-        Dashboard..................
+
+        @livewire('wirehome')
 
     </div>
 

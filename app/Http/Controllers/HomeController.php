@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Penerimaan;
+use App\Models\YearSelect;
 use Illuminate\Http\Request;
 
 
@@ -26,5 +28,10 @@ class HomeController extends Controller
     {
         
         return view('home');
+    }
+    public function tahun()
+    {
+        
+        return view('pages.tahun');
     }
 }
